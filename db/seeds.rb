@@ -10,5 +10,5 @@ Teacher.create(name: "nate", password: BCrypt::Password.create('merowind'),
   id = Teacher.all.sample.id
   Parent.create!(name: n, email: Faker::Internet.safe_email(n),
                  student_name: Faker::Name.first_name,
-                 teacher_id: id)
+                 teacher_id: rand(1..10))
 end

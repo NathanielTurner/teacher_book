@@ -1,11 +1,11 @@
 class TeachersController < ApplicationController
+  before_action :logged_in?
   before_action :set_teacher, only: [:show, :edit, :update, :destroy]
 
   # GET /teachers
   # GET /teachers.json
   def index
-    @teachers = Teacher.all
-    @parents = Parent.all
+    @parents = Parent.all.select{|p| p.teacher_id == session[:teacher_id]}
   end
 
   # GET /teachers/1
@@ -73,4 +73,11 @@ class TeachersController < ApplicationController
       params.require(:teacher).permit(:name, :email, :password, :password_confirmation)
     end
 
+    def logged_in?
+      if Teacher.find_by_id(session[:teacher_id])
+        return true
+      else
+        redirect_to login_login_path, notice: 'Restricted. Login first.'
+      end
+    end
 end
