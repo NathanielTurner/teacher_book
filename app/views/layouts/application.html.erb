@@ -13,13 +13,13 @@
       <h4>Logged in as <%= Teacher.find_by_id(session[:teacher_id]).name %></h4>
     </header>
   <% end %>
-  <body>
+  <body align="center">
     <header>
       <%= render 'layouts/navigation' %>
     </header>
 
     <main role="main">
-      <%= link_to "Logout", login_logout_path if session[:teacher_id] %>
+      <%= link_to "Logout", login_logout_path, class: "inline-link-1" if session[:teacher_id] %>
       <%= render 'layouts/messages' %>
       <%= yield %>
     </main>

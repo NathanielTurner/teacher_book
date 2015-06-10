@@ -5,6 +5,7 @@ class TeachersController < ApplicationController
   # GET /teachers
   # GET /teachers.json
   def index
+    @teacher = Teacher.all
     @parents = Parent.all.select{|p| p.teacher_id == session[:teacher_id]}
   end
 

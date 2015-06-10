@@ -370,11 +370,10 @@
 
   .inline-link-1 {
       display: inline-block;
-      margin: 0 0.2em;
+      margin: 1px 0.2em;
       padding: 3px;
       background: #97CAF2;
       border-radius: 2px;
-
       -webkit-transition: all 0.3s ease-out;
       -moz-transition: all 0.3s ease-out;
       -o-transition: all 0.3s ease-out;
@@ -499,7 +498,17 @@
       border-color: #FEE8BD
   }
 
+  ::-webkit-scrollbar {
+      width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+      background-color: rgba(2, 0, 0, 0.2);
+}
+
   .modern {
+      overflow: auto;
+      height: 150px;
       display: inline-block;
       margin: 10px;
       padding: 8px 15px;

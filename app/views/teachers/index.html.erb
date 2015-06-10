@@ -1,26 +1,32 @@
 <p id="notice"><%= notice %></p>
+
 <h2>Listing Parents</h2>
-<table>
+<div>
+
+<table class="modern", cellspacing="0">
+  <caption align="top">
+    <div align="left"><%= link_to 'New Parent', new_parent_path,class: "bordered-link" %></div>
+  </caption>
   <thead>
-    <tr>
+    <tr class="border_bottom">
       <th>Name</th>
-      <th>Student name</th>
       <th>Email</th>
+      <th>Student</th>
       <th>Teacher</th>
       <th colspan="3"></th>
     </tr>
   </thead>
   <tbody>
     <% @parents.each do |parent| %>
-      <tr>
+      <tr class="border_bottom">
         <td><%= parent.name %></td>
         <td><%= parent.email %></td>
         <td><%= parent.student_name %></td>
-        <td><%= parent.teacher_id %></td>
-        <td><%= link_to 'Edit', edit_parent_path(parent) %></td>
-        <td><%= link_to 'Destroy', parent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= @teacher.find_by_id(parent.teacher_id).name %></td>
+        <td><%= link_to 'Edit', edit_parent_path(parent), class: "bordered-link" %></td>
+        <td><%= link_to 'Destroy', parent, method: :delete, data: { confirm: 'Are you sure?' }, class: "bordered-link" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-<%= link_to 'New Parent', new_parent_path %>
+</div>
