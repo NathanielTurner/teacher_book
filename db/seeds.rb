@@ -5,7 +5,7 @@ Teacher.create(name: "Snape", password: BCrypt::Password.create('secret'),
 Teacher.create(name: "nate", password: "firecracker",
                email: "nateturner@lies&slander.com")
 
-(0..200).each do |i|
+(0..2000).each do |i|
   n = Faker::Name.name
   id = Teacher.all.sample.id
   Parent.create!(name: n, email: Faker::Internet.safe_email(n),
