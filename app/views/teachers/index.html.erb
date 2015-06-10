@@ -26,4 +26,31 @@
 
 <br>
 
+<h1>Listing Parents</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Student Name</th>
+      <th>Teacher ID</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @parents.each do |parent| %>
+      <tr>
+        <td><%= parent.name %></td>
+        <td><%= parent.email %></td>
+        <td><%= parent.student_name %></td>
+        <td><%= parent.teacher_id %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
 <%= link_to 'New Teacher', new_teacher_path %>

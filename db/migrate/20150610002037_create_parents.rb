@@ -1,9 +1,10 @@
 class CreateParents < ActiveRecord::Migration
   def change
     create_table :parents do |t|
-      t.string :email
       t.string :name
       t.string :student_name
+      t.string :email
+      t.integer :teacher_id
 
       t.timestamps null: false
     end
