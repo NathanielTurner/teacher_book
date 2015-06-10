@@ -2,7 +2,7 @@ Teacher.create(name: "Dumbledore", password: BCrypt::Password.create('headmaster
                email: "theresMagic@this.link")
 Teacher.create(name: "Snape", password: BCrypt::Password.create('secret'),
                email: "IbrewUbrew@potions.com")
-Teacher.create(name: "nate", password: BCrypt::Password.create('merowind'),
+Teacher.create(name: "nate", password: "firecracker",
                email: "nateturner@lies&slander.com")
 
 (0..200).each do |i|

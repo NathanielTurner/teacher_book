@@ -8,14 +8,21 @@
     <%= javascript_include_tag 'application'%>
     <%= csrf_meta_tags %>
   </head>
+  <% if session[:teacher_id] %>
+    <header>
+      <h4>Logged in as <%= Teacher.find_by_id(session[:teacher_id]).name %></h4>
+    </header>
+  <% end %>
   <body>
     <header>
       <%= render 'layouts/navigation' %>
     </header>
+
     <main role="main">
       <%= link_to "Logout", login_logout_path if session[:teacher_id] %>
       <%= render 'layouts/messages' %>
       <%= yield %>
     </main>
+
   </body>
 </html>

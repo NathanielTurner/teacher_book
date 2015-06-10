@@ -8,35 +8,10 @@ class TeachersController < ApplicationController
     @parents = Parent.all.select{|p| p.teacher_id == session[:teacher_id]}
   end
 
-  # GET /teachers/1
-  # GET /teachers/1.json
-  def show
-  end
-
-  # GET /teachers/new
-  def new
-    @teacher = Teacher.new
-  end
-
   # GET /teachers/1/edit
   def edit
   end
 
-  # POST /teachers
-  # POST /teachers.json
-  def create
-    @teacher = Teacher.new(teacher_params)
-
-    respond_to do |format|
-      if @teacher.save
-        format.html { redirect_to @teacher, notice: 'Teacher was successfully created.' }
-        format.json { render :show, status: :created, location: @teacher }
-      else
-        format.html { render :new }
-        format.json { render json: @teacher.errors, status: :unprocessable_entity }
-      end
-    end
-  end
 
   # PATCH/PUT /teachers/1
   # PATCH/PUT /teachers/1.json
